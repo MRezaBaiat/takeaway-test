@@ -1,7 +1,7 @@
-interface Restaurant {
+export interface Restaurant {
     name: string,
     status: 'open' | 'closed' | 'order ahead',
-    isFavourite: boolean,
+    isFavourite: ()=>boolean,
     sortingValues: {
         bestMatch: number,
         newest: number,
@@ -11,7 +11,6 @@ interface Restaurant {
         averageProductPrice: number,
         deliveryCosts: number,
         minCost: number,
+        topRestaurants: number
     }
 }
-
-export default Restaurant;

@@ -1,0 +1,56 @@
+.restaurant-view-container{
+    flex-direction: row;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border: 2px solid orange ;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 100px;
+    width: 50vw;
+    padding-right: 5px;
+    box-shadow: 1px 1px 5px darkgrey;
+}
+.restaurant-view-img{
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+    border: 1px solid orange ;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+.restaurant-view-favourite-img{
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.restaurant-view-info-container{
+    padding-left: 10px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+.restaurant-view-status-open{
+    color: green;
+}
+.restaurant-view-status-closed{
+    color: red;
+}
+.restaurant-view-status-orderahead{
+    color: orange;
+}
+.restaurant-view-name{
+    font-family: Pristina, Arial, sans-serif, Arial, sans-serif;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.restaurant-view-info{
+    margin: auto 5px 5px auto;
+    font-family: "Open Sans", serif;
+    font-size: 15px;
+}

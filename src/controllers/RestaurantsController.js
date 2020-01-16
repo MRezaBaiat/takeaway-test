@@ -1,15 +1,24 @@
-import data from '../assets/data';
+import { Restaurant } from '../inter/Restaurant';
 
-initialize = async ()=>{
-
+const getFavourites = (): string[] => {
+  return JSON.parse(localStorage.getItem('favourites')) || [];
 };
 
-search = ()=>{
-
+const saveFavourites = (favourites: string[]) => {
+  localStorage.setItem('favourites', JSON.stringify(favourites));
 };
 
-getAll = () =>{
+const initRestaurant = (restaurant: Restaurant) => {
+  const { sortingValues } = restaurant;
+  restaurant.isFavourite = () => {
+    return require('../redux/Store').default.getState().restaurantsReducer.favourites.indexOf(restaurant.name) !== -1;
+  };
+  sortingValues.topRestaurants = (sortingValues.distance * sortingValues.popularity) * sortingValues.ratingAverage;
+  return restaurant;
+};
 
-}
-
-get
+export default {
+  getFavourites,
+  saveFavourites,
+  initRestaurant
+};

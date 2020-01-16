@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Hello , in order to run tests , simply run:
+
+`yarn test`
+
 ## Available Scripts
 
 In the project directory, you can run:

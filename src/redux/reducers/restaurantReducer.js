@@ -1,23 +1,39 @@
-import * as actions from '../actions/actions';
-import Restaurant from '../../models/Restaurant';
+import * as actions from '../actions/restaurantActions';
+import { Restaurant } from '../../inter/Restaurant';
 import data from '../../assets/data';
+import SortType from '../../inter/SortType';
+import RestaurantsController from '../../controllers/RestaurantsController';
 
 export interface InitialState {
-  data: Restaurant[]
+  restaurants: Restaurant[],
+  filterKeyword: string,
+  sortType: string,
+  favourites: string[]
 }
 
-const initialState: InitialState = {
-  data: data
+export const initialState: InitialState = {
+  restaurants: data.restaurants.map(RestaurantsController.initRestaurant),
+  filterKeyword: '',
+  sortType: SortType.minimum_cost,
+  favourites: RestaurantsController.getFavourites()
 };
 
-const restaurantsReducer = (state = initialState, action: { type: any;payload: any }) => {
+const restaurantReducer = (state = initialState, action: { type: any, payload: any }) => {
   switch (action.type) {
-    case actions.ACTION_WINDOW_SIZE_CHANGE:
+    case actions.ACTION_SET_FILTER:
       return {
         ...state,
-        windowSize: {
-          ...action.payload
-        }
+        filterKeyword: action.payload
+      };
+    case actions.ACTION_SET_SORTTYPE:
+      return {
+        ...state,
+        sortType: action.payload
+      };
+    case actions.ACTION_SET_FAVOURITE:
+      return {
+        ...state,
+        favourites: action.payload
       };
 
     default:
@@ -25,4 +41,4 @@ const restaurantsReducer = (state = initialState, action: { type: any;payload: a
   }
 };
 
-export default restaurantsReducer;
+export default restaurantReducer;

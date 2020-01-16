@@ -1,12 +1,10 @@
-import { combineReducers, configureStore, getDefaultMiddleware } from 'redux-starter-kit';
-import authReducer from '../redux/reducers/auth_reducer';
-import userReducer from '../redux/reducers/users_reducer';
-import reducer from '../redux/reducers/reducer';
+import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import restaurantsReducer from '../redux/reducers/restaurantReducer';
+import globalReducer from '../redux/reducers/globalReducer';
 
 const rootReducer = combineReducers({
-  global: reducer,
-  authReducer: authReducer,
-  userReducer: userReducer
+  global: globalReducer,
+  restaurantsReducer: restaurantsReducer
 });
 
 export default function initStore (preloadedState) {
@@ -19,9 +17,8 @@ export default function initStore (preloadedState) {
 
   // adding HOT reloading capability
   if (process.env.NODE_ENV !== 'production' && module.hot) {
-    module.hot.accept('../redux/reducers/auth_reducer', () => store.replaceReducer(authReducer));
-    module.hot.accept('../redux/reducers/users_reducer', () => store.replaceReducer(userReducer));
-    module.hot.accept('../redux/reducers/reducer', () => store.replaceReducer(reducer));
+    module.hot.accept('../redux/reducers/globalReducer', () => store.replaceReducer(globalReducer));
+    module.hot.accept('../redux/reducers/restaurantReducer', () => store.replaceReducer(restaurantsReducer));
   }
 
   return store;
