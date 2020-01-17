@@ -1,7 +1,7 @@
 import * as actions from '../actions/restaurantActions';
-import { Restaurant } from '../../inter/Restaurant';
+import { Restaurant } from '../../models/Restaurant';
 import data from '../../assets/data';
-import SortType from '../../inter/SortType';
+import SortType from '../../models/SortType';
 import RestaurantsController from '../../controllers/RestaurantsController';
 
 export interface InitialState {

@@ -1,4 +1,4 @@
-import { Restaurant } from '../inter/Restaurant';
+import { Restaurant } from '../models/Restaurant';
 
 const getFavourites = (): string[] => {
   return JSON.parse(localStorage.getItem('favourites')) || [];

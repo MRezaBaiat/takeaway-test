@@ -1,6 +1,6 @@
-import SortType from '../inter/SortType';
+import SortType from '../models/SortType';
 import { InitialState } from '../redux/reducers/restaurantReducer';
-import { Restaurant } from '../inter/Restaurant';
+import { Restaurant } from '../models/Restaurant';
 
 const filterers = {};
 

@@ -4,7 +4,7 @@ import data from '../assets/data';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import Adapter from 'enzyme-adapter-react-16';
-import SortType, { translateSortType } from '../inter/SortType';
+import SortType, { translateSortType } from '../models/SortType';
 import App from '../App';
 import { Provider } from 'react-redux';
 import { unmountComponentAtNode } from 'react-dom';

@@ -1,8 +1,8 @@
 import React from 'react';
-import type { Restaurant } from '../../../inter/Restaurant';
+import type { Restaurant } from '../../../models/Restaurant';
 import './styles.css';
 import R from '../../../assets/R';
-import SortType from '../../../inter/SortType';
+import SortType from '../../../models/SortType';
 
 interface Props{
   restaurant: Restaurant,

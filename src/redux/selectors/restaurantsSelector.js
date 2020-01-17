@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import SortType from '../../inter/SortType';
+import SortType from '../../models/SortType';
 import filterers from '../../config/Filterers';
 
 const sortSelectors = {};

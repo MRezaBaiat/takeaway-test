@@ -3,13 +3,13 @@ import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFavourite, setFilter, setSortType } from './redux/actions/restaurantActions';
 import { getSortTypeSelector } from './redux/selectors/restaurantsSelector';
-import SortType, { translateSortType } from './inter/SortType';
+import SortType, { translateSortType } from './models/SortType';
 import AppDropDown from './components/base/app_dropdown/AppDropDown';
 import MenuItem from '@material-ui/core/MenuItem';
 import RestaurantView from './components/composite/restaurant_view/RestaurantView';
 import AppInput from './components/composite/app_input/AppInput';
 import AppList from './components/composite/app_list/AppList';
-import type { Restaurant } from './inter/Restaurant';
+import type { Restaurant } from './models/Restaurant';
 
 function App () {
   const sortType = useSelector(state => state.restaurantsReducer.sortType);

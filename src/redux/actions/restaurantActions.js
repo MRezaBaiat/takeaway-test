@@ -1,4 +1,4 @@
-import type { Restaurant } from '../../inter/Restaurant';
+import type { Restaurant } from '../../models/Restaurant';
 import RestaurantsController from '../../controllers/RestaurantsController';
 
 export const ACTION_SET_FILTER = 'ACTION_SET_FILTER';
